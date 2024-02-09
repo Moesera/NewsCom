@@ -4,8 +4,12 @@ import { Link } from "svelte-routing";
 
 <nav>
   <ul>
-    <Link to="/">Home</Link>
-    <Link to="/news">News</Link>
-    <Link to="/about">About</Link>
+    <Link to="/" class="nav-link" >University search</Link>
+    <!-- <Link to="/news">Civis Search</Link> -->
+    <!-- <Link to="/about">About</Link> -->
   </ul>
 </nav>
+
+<style>
+
+</style>

@@ -9,9 +9,9 @@ import News from './routes/news/News.svelte';
 
 <Router>
   <Layout>
-  <Route path="/" component={Home}></Route>
-  <Route path="/news" component={News}></Route>
-  <Route path="/about" component={About}></Route>
+    <Route path="/" component={Home}></Route>
+    <Route path="/news" component={News}></Route>
+    <Route path="/about" component={About}></Route>
 </Layout>
 </Router>
 
