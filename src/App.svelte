@@ -1,10 +1,10 @@
 <script>
-import { Router, Route } from 'svelte-routing';
+  import { Router, Route } from 'svelte-routing';
 
-import Layout from './lib/components/layout/_layout.svelte';
-import About from './routes/about/About.svelte';
-import Home from './routes/home/Home.svelte';
-import News from './routes/news/News.svelte';
+  import Layout from './lib/components/layout/_layout.svelte';
+  import About from './routes/about/About.svelte';
+  import Home from './routes/home/Home.svelte';
+  import News from './routes/news/News.svelte';
 </script>
 
 <Router>

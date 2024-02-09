@@ -7,20 +7,17 @@
       const res = await fetch(
         `http://universities.hipolabs.com/search?country=${country}`,
       );
-      // alert(`this is ${country}`);
 
       uniData = await res.json();
-
-      console.log(uniData);
     } catch (e) {
       console.log(e);
     }
   }
 </script>
 
-<h1>Uni search</h1>
+<h1>University search</h1>
 
-<p>Search for country</p>
+<p>Enter the country you want to list universities for</p>
 
 <section>
   <form method="POST" on:submit|preventDefault={apiFetch}>
@@ -30,25 +27,21 @@
       id="search"
       name="search"
       type="text"
-      placeholder="search"
+      placeholder="Enter country"
     />
 
-    <button type="submit">Submit</button>
+    <button type="submit">Search</button>
   </form>
 </section>
 
-<section class="resultSection">
-  <h2>List of uni Results</h2>
-{#each uniData as uni }
-  <div class="uniBoxResult">
-    <h3>{uni.name}</h3>
-    <div>
-      <h4>Webpage</h4>
-      <p>{uni.web_pages[0]}</p>
+<section class="resultSection"> 
+  {#each uniData as uni }
+    <div class="uniBoxResult">
+      <h3>{uni.name}</h3>
+      <a href="{uni.web_pages[0]}">{uni.web_pages[0]}</a>
+      <span class="badge float-right">{uni.country}</span>
     </div>
-    <span>{uni.country}</span>
-  </div>
-{/each}
+  {/each}
 </section>
 
 <style>
@@ -57,6 +50,7 @@
     align-items: center;
     gap: 0.4rem;
   }
+
   input {
     padding: 0.4rem;
     margin: 0rem;
@@ -66,11 +60,48 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-top: 30px;
   }
 
   .uniBoxResult {
-    background: rgba(120,102,240, 0.40);
     padding: 0.8rem;
-    border-radius: 0.4rem;
+    border-radius: 6px;
+    border: 1px solid #ddd;
   }
+
+  .uniBoxResult h3 {
+    margin-top: 5px;
+  }
+
+  input#search {
+    background: #e5e5e5;
+    border: none;
+    border-radius: 3px;
+    color: #4e4c4e;
+    font-family: inherit;
+    font-size: 14px;
+    height: 40px;
+    outline: none;
+    padding: 0px 10px;
+    width: 300px;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    color: #fff;
+    background-color: #17a2b8;
+  }
+
+  .float-right {
+    float: right;
+  }
+
 </style>

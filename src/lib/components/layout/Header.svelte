@@ -4,7 +4,7 @@ import Nav from "./Nav.svelte";
 
 
 <header>
-  <span><strong>SvelteApp</strong></span>
+  <span><strong>Tech friday</strong></span>
 <Nav />
 </header>
 
