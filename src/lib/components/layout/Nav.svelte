@@ -5,8 +5,7 @@
 <nav>
   <ul>
     <Link to="/" class="nav-link" >University search</Link>
-    <!-- <Link to="/news">Civis Search</Link> -->
-    <!-- <Link to="/about">About</Link> -->
+    <Link to="/cats" class="nav-link" >Cat images</Link>
   </ul>
 </nav>
 
