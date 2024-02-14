@@ -100,12 +100,9 @@
     </form>
 </section>
 
-<!-- <section class={resultSectionClass}>
+<section class={resultSectionClass}>
     <h2>{symbol} - ${entries[0].close} ({entries[0].label})</h2>
-    {#each entries as entry}
-        <p>{entry.close}</p>
-    {/each}
-</section> -->
+</section>
 
 <section>
     <canvas id="chart" width="400" height="400"></canvas>
