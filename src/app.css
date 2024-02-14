@@ -93,6 +93,52 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+form {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+input {
+  padding: 0.4rem;
+  margin: 0rem;
+}
+
+input#search {
+  background: #e5e5e5;
+  border: none;
+  border-radius: 3px;
+  color: #4e4c4e;
+  font-family: inherit;
+  font-size: 14px;
+  height: 40px;
+  outline: none;
+  padding: 0px 10px;
+  width: 300px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  color: #fff;
+  background-color: #17a2b8;
+}
+
+.float-right {
+  float: right;
+}
+
+.hidden {
+  display: none;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

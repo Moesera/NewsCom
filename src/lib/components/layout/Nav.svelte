@@ -6,6 +6,7 @@
   <ul>
     <Link to="/" class="nav-link" >University search</Link>
     <Link to="/cats" class="nav-link" >Cat images</Link>
+    <Link to="/stocks" class="nav-link" >Stock prices</Link>
   </ul>
 </nav>
 
