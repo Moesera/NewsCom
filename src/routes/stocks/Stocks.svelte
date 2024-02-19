@@ -1,6 +1,7 @@
 <script>
   import Chart from 'chart.js/auto';
   import colorLib from '@kurkle/color';
+  import Button from '../../lib/components/page/Button.svelte';
 
   let ticker = '';
   let symbol = '';
@@ -87,7 +88,7 @@
   <form method="POST" on:submit|preventDefault={stockFetch}>
     <input bind:value={ticker} id="search" name="search" type="text" placeholder="Enter company stock ticker, e.g. tsla, eqnr or aapl" />
 
-    <button type="submit">Search</button>
+    <Button type="submit" buttonText="Search"></Button>
   </form>
 </section>
 
