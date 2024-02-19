@@ -1,15 +1,25 @@
-<script>
-  import { Link } from "svelte-routing";
+<script lang="ts">
+  import Button from "../page/Button.svelte";
+
+  let links = [
+    ["University search", "/"],
+    ["Cat images", "/cats"],
+    ["Stock prices", "/stocks"],
+  ];
 </script>
 
 <nav>
   <ul>
-    <Link to="/" class="nav-link" >University search</Link>
-    <Link to="/cats" class="nav-link" >Cat images</Link>
-    <Link to="/stocks" class="nav-link" >Stock prices</Link>
+    {#each links as [text, link]}
+      <Button to={link} classList="nav-link" buttonText={text}></Button>
+    {/each}
   </ul>
 </nav>
 
 <style>
-
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+  }
 </style>

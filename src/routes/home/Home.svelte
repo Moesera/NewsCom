@@ -1,12 +1,12 @@
 <script>
+  import Button from "../../lib/components/page/Button.svelte";
+
   let country = "";
   let uniData = [];
 
   async function apiFetch() {
     try {
-      const res = await fetch(
-        `http://universities.hipolabs.com/search?country=${country}`,
-      );
+      const res = await fetch(`http://universities.hipolabs.com/search?country=${country}`);
 
       uniData = await res.json();
     } catch (e) {
@@ -22,23 +22,17 @@
 <section>
   <form method="POST" on:submit|preventDefault={apiFetch}>
     <!-- <label for="search" >search</label> -->
-    <input
-      bind:value={country}
-      id="search"
-      name="search"
-      type="text"
-      placeholder="Enter country"
-    />
+    <input bind:value={country} id="search" name="search" type="text" placeholder="Enter country" />
 
-    <button type="submit">Search</button>
+    <Button type="submit" buttonText="submit"></Button>
   </form>
 </section>
 
-<section class="resultSection"> 
+<section class="resultSection">
   {#each uniData as uni}
     <div class="uniBoxResult">
       <h3>{uni.name}</h3>
-      <a href="{uni.web_pages[0]}">{uni.web_pages[0]}</a>
+      <a href={uni.web_pages[0]}>{uni.web_pages[0]}</a>
       <span class="badge float-right">{uni.country}</span>
     </div>
   {/each}
